@@ -3,3 +3,63 @@ CTC Separate Stylesheet
 Updated: 2022-02-18 22:37:46
 */
 
+.container {
+  margin: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: var(--responsive--alignwide-width);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 10px;
+}
+
+.full-width {
+  grid-column: span 12;
+}
+
+.home-featured-post, .home-recent-post {
+  overflow: auto;
+}
+
+/* Desktop screen. */
+@media screen and (min-width: 721px) {
+  .home-featured-post, .home-recent-post {
+    grid-column: span 3;
+  }
+}
+
+/* Tablet Screen */
+@media screen and (max-width: 720px) {
+  .home-featured-post {
+    grid-column: span 4;
+  }
+  .home-recent-post {
+    grid-column: span 6;
+  }
+}
+
+/* Mobile Screen */
+@media screen and (max-width: 576px) {
+  .home-featured-post, .home-recent-post {
+    grid-column: span 12;
+  }
+}
+
+.top-sticky .default-max-width,
+.top-sticky .post-thumbnail,
+.top-sticky .entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce)
+{
+  max-width: none !important;
+}
+
+.entry-title {
+  font-size: 25px;
+}
+
+.top-sticky .entry-title {
+  font-size: var(--entry-header--font-size);
+}
+
+.widget-area {
+  margin-top: 0;
+}
